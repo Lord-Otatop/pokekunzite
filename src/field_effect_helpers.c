@@ -12,6 +12,7 @@
 #include "trig.h"
 #include "constants/field_effects.h"
 #include "constants/songs.h"
+#include "event_object_movement.h"
 
 #define OBJ_EVENT_PAL_TAG_NONE 0x11FF // duplicate of define in event_object_movement.c
 
@@ -238,11 +239,15 @@ u32 FldEff_Shadow(void)
     if (spriteId != MAX_SPRITES)
     {
         gSprites[spriteId].coordOffsetEnabled = TRUE;
-        gSprites[spriteId].sLocalId = gFieldEffectArguments[0];
-        gSprites[spriteId].sMapNum = gFieldEffectArguments[1];
-        gSprites[spriteId].sMapGroup = gFieldEffectArguments[2];
-        gSprites[spriteId].sYOffset = (graphicsInfo->height >> 1) - gShadowVerticalOffsets[graphicsInfo->shadowSize];
+        gSprites[spriteId].data[0] = gFieldEffectArguments[0];
+        gSprites[spriteId].data[1] = gFieldEffectArguments[1];
+        gSprites[spriteId].data[2] = gFieldEffectArguments[2];
+        gSprites[spriteId].data[3] = (graphicsInfo->height >> 1) - gShadowVerticalOffsets[graphicsInfo->shadowSize];
+
+        gSprites[spriteId].oam.objMode = ST_OAM_OBJ_BLEND;
     }
+    SetGpuReg(REG_OFFSET_DISPCNT, 0x1F40);
+    SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(0, BASE_SHADOW_INTENSITY));
     return 0;
 }
 
@@ -264,9 +269,7 @@ void UpdateShadowFieldEffect(struct Sprite *sprite)
         if (!objectEvent->active || !objectEvent->hasShadow
          || MetatileBehavior_IsPokeGrass(objectEvent->currentMetatileBehavior)
          || MetatileBehavior_IsSurfableWaterOrUnderwater(objectEvent->currentMetatileBehavior)
-         || MetatileBehavior_IsSurfableWaterOrUnderwater(objectEvent->previousMetatileBehavior)
-         || MetatileBehavior_IsReflective(objectEvent->currentMetatileBehavior)
-         || MetatileBehavior_IsReflective(objectEvent->previousMetatileBehavior))
+         || MetatileBehavior_IsSurfableWaterOrUnderwater(objectEvent->previousMetatileBehavior))
         {
             FieldEffectStop(sprite, FLDEFF_SHADOW);
         }

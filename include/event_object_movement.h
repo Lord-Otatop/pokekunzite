@@ -70,6 +70,9 @@ enum ReflectionTypes
 #define GROUND_EFFECT_FLAG_SHORT_GRASS           (1 << 17)
 #define GROUND_EFFECT_FLAG_HOT_SPRINGS           (1 << 18)
 #define GROUND_EFFECT_FLAG_SEAWEED               (1 << 19)
+#define GROUND_EFFECT_SHADOW                     (1 << 20)
+
+#define BASE_SHADOW_INTENSITY                    14 // Ranges from 0 to 16, where 0 is black and 16 is transparent
 
 // Sprite data for the CameraObject functions
 #define sCamera_FollowSpriteId data[0]
