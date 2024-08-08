@@ -4420,6 +4420,16 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/ElmacTown/border.bin",
       "blockdata_filepath": "data/layouts/ElmacTown/map.bin"
+    },
+    {
+      "id": "LAYOUT_LAZULI_TOWN",
+      "name": "LazuliTown_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Pacifidlog",
+      "border_filepath": "data/layouts/LazuliTown/border.bin",
+      "blockdata_filepath": "data/layouts/LazuliTown/map.bin"
     }
   ]
 }

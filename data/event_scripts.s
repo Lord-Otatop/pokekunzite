@@ -1074,3 +1074,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/text/birch_speech.inc"
 
 	.include "data/maps/ElmacTown/scripts.inc"
+
+	.include "data/maps/LazuliTown/scripts.inc"
