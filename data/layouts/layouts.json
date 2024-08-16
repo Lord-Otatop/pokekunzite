@@ -4410,6 +4410,46 @@
       "secondary_tileset": "gTileset_MysteryEventsHouse",
       "border_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/border.bin",
       "blockdata_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/map.bin"
+    },
+    {
+      "id": "LAYOUT_DREAM_AREA",
+      "name": "DreamArea_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Underwater",
+      "border_filepath": "data/layouts/DreamArea/border.bin",
+      "blockdata_filepath": "data/layouts/DreamArea/map.bin"
+    },
+    {
+      "id": "LAYOUT_SILVER_CITY",
+      "name": "SilverCity_Layout",
+      "width": 60,
+      "height": 60,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Sootopolis",
+      "border_filepath": "data/layouts/SilverCity/border.bin",
+      "blockdata_filepath": "data/layouts/SilverCity/map.bin"
+    },
+    {
+      "id": "LAYOUT_PLAYER_HOUSE",
+      "name": "PlayerHouse_Layout",
+      "width": 9,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/PlayerHouse/border.bin",
+      "blockdata_filepath": "data/layouts/PlayerHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_LIVING_ROOM",
+      "name": "LivingRoom_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/LivingRoom/border.bin",
+      "blockdata_filepath": "data/layouts/LivingRoom/map.bin"
     }
   ]
 }
